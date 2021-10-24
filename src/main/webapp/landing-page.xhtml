@@ -1,0 +1,71 @@
+<ui:composition template="/WEB-INF/templates/layout/main-page.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="title" value="Couchbase Showcase"/>
+    <ui:param name="heading" value="Welcome to Couchbase Showcase" />
+
+    <ui:define name="content">
+        <h:form>
+            <div class="content">
+
+                <div id="input">
+                    <h:outputLabel id="idLabel" styleClass="label" value="ID:"/>
+                    <h:inputText id="idInput" label="Id" value="#{couchbaseController.id}"/>
+                    <h:message for="idInput"/>
+                    <br/>
+                    <h:outputLabel id="nameLabel" styleClass="label" value="Name:"/>
+                    <h:inputText id="nameInput" label="Name" value="#{couchbaseController.category.name}"/>
+                    <h:message for="nameInput"/>
+                    <br/>
+                    <h:outputLabel id="detailsLabel" styleClass="label" value="Details:"/>
+                    <h:inputText id="detailsInput" label="Details" value="#{couchbaseController.category.details}"/>
+                    <h:message for="detailsInput"/>
+
+                    <div id="addControl">
+                        <h:commandButton id="submitButton" value="Submit" action="#{couchbaseController.addCategory()}">
+                            <f:ajax execute="@form" render="@form"/>
+                        </h:commandButton>
+                    </div>
+                </div>
+                <br/>
+                <div id="remove">
+
+                    <h:outputLabel id="removeIdLabel" value="ID:"/>
+                    <h:inputText id="removeInput" label="Id" value="#{couchbaseController.removeId}"/>
+                    <h:message for="removeInput"/>
+
+                    <div id="removeCategory" >
+                        <h:commandButton id="removeButton" value="Remove" action="#{couchbaseController.delete()}">
+                            <f:ajax execute="@form" render="@form"/>
+                        </h:commandButton>
+                    </div>
+
+                </div>
+
+            </div>
+            <br/>
+            <div>
+                <h:form id="dataTableForm">
+                    <p:dataTable id="dataTable" value="#{couchbaseController.list}" var="data" >
+
+                        <p:column>
+                            <f:facet name="header">Name:</f:facet>
+                            <h:outputText value="#{data.name}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Details:</f:facet>
+                            <h:outputText value="#{data.details}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </h:form>
+            </div>
+        </h:form>
+    </ui:define>
+
+</ui:composition>

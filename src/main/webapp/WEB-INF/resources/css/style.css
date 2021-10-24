@@ -1,0 +1,148 @@
+.body-overflow {
+    overflow-y: hidden;
+}
+
+.body-wo-overflow {
+    overflow-y: auto;
+}
+
+.main-header {
+    background: #00b9ff;
+    padding: 10px;
+    /*box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px, rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0;*/
+    background: linear-gradient(to right, #fff200, 50%, #000000);
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.main-header-content {
+    flex: 1 0 auto;
+}
+
+.wrap-whole {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.vertical-nav-bar {
+    display: flex;
+    flex: 0 0 100px;
+    flex-flow: column nowrap;
+    text-align: center;
+    z-index: 30;
+    background: #061e2a;
+    background: linear-gradient(to right, #fff200, 50%, #000000);
+    padding: 1rem 0 0 0;
+    justify-content: flex-start;
+    height: 800px;
+}
+
+.menu-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+}
+.main-nav-link {
+    transition: opacity .2s, visibility .2s;
+    flex: 1 1 auto;
+    align-self: center;
+    display: flex;
+    position: relative;
+}
+.main-nav-link a {
+    font-weight: 500;
+    font-size: 0.66rem;
+    letter-spacing: 0.04rem;
+    color: #03A9F4;
+    padding: 0.75rem 0.5rem;
+    text-transform: uppercase;
+}
+
+.container_main {
+    flex: 1 1 600px;
+    overflow-y: auto;
+}
+
+.container_content {
+    background: white;
+    overflow-y: hidden;
+}
+
+.technology-list-item {
+    text-align: center;
+}
+
+.header-button {
+    background-color: #fff200;
+    border: 2px solid white;
+    color: black;
+    padding:  10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px 50px 30px;
+}
+
+.sidebar-button {
+    background-color: #fff200;
+    border: 2px solid white;
+    color: black;
+    padding:  10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 11px;
+    border-radius: 15px 50px 30px;
+}
+
+.box {
+    border: 5px #f7a239;
+}
+
+.technology {
+    padding: 50px 30px 50px 80px;
+    display: flex;
+    flex-flow: row nowrap;
+
+}
+
+.banner {
+    padding: 0px 0px 0px 0px;
+    object-fit: cover;
+    /*width: 300px;
+    height: 300px;*/
+}
+
+body .ui-rating .ui-rating-star-on a {
+    color: #fff200;
+}
+
+#heading {
+    text-align: center;
+    outline: 2px double #fff200;
+    outline-offset: 0px;
+    background: black;
+    color: #fff200;
+    display: block;  padding: 20px 10px; border: 5px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    background-color: #fff200;
+    border: 2px solid white;
+    color: black;
+    padding:  10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 11px;
+    border-radius: 15px 50px 30px;
+}
+
+.label {
+    padding:  10px 10px;
+}
+
+

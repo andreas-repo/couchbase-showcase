@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>at.showcase</groupId>
+    <artifactId>couchbase-showcase</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <developers>
+        <developer>
+            <id>am</id>
+            <name>Andreas Mayer</name>
+            <email>andreas.m4020@gmail.com</email>
+            <roles>
+                <role>Product Owner</role>
+                <role>Software Developer</role>
+                <role>Software Architect</role>
+            </roles>
+        </developer>
+
+    </developers>
+
+    <properties>
+
+        <!-- Build Properties -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <maven.min.version>3.0</maven.min.version>
+        <jdk.min.version>${maven.compiler.source}</jdk.min.version>
+        <downloadSources>true</downloadSources>
+        <targetJdk>${maven.compiler.target}</targetJdk>
+        <useReleaseProfile>false</useReleaseProfile>
+
+        <!-- Dependencies Versions Specifications -->
+        <version.javaee-api>8.0</version.javaee-api>
+
+        <!-- Dependencies Logger -->
+        <version.log4j>1.2.17</version.log4j>
+        <version.slf4-log4j>1.7.21</version.slf4-log4j>
+
+        <version.primefaces>8.0</version.primefaces>
+        <version.slf4j>1.7.32</version.slf4j>
+        <version.couchbase>3.2.2</version.couchbase>
+        <version.apache.poi>5.0.0</version.apache.poi>
+        <version.primefaces.themes>8.0</version.primefaces.themes>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${version.javaee-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>${version.primefaces}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${version.slf4j}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>${version.apache.poi}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.couchbase.client</groupId>
+            <artifactId>java-client</artifactId>
+            <version>${version.couchbase}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.primefaces.extensions/primefaces-extensions -->
+        <dependency>
+            <groupId>org.primefaces.extensions</groupId>
+            <artifactId>primefaces-extensions</artifactId>
+            <version>${version.primefaces.themes}</version>
+        </dependency>
+    </dependencies>
+
+</project>

@@ -1,0 +1,30 @@
+<ui:composition template="/WEB-INF/templates/layout/main-page.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="title" value="Couchbase Showcase - Search Example"/>
+    <ui:param name="heading" value="Welcome to Couchbase Showcase - Search Example"/>
+
+    <ui:define name="content">
+        <div id="search-control">
+            <h:form>
+                <div id="text-search-input">
+                    <p:outputLabel styleClass="label" value="Freitextsuche:"/>
+                    <p:inputText id="text-input" value="#{couchbaseSearchController.textInput}" placeholder="Text für Suche eingeben"/>
+                </div>
+                <div id="id-search-input">
+                    <p:outputLabel styleClass="label" value="ID Suche:"/>
+                    <p:inputText id="id-input" value="#{couchbaseSearchController.idInput}" placeholder="ID für Suche eingeben"/>
+                </div>
+            </h:form>
+        </div>
+        <div id="search-datatable">
+            <h:form>
+
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
