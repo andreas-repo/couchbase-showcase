@@ -20,7 +20,7 @@ public class CouchbaseCategoryDAOImpl implements CouchbaseCategoryDAO {
 
     private String connectionString = "localhost";
     private String username = "gepardec-user";
-    private String password = "Amwil1988!?";
+    private String password = "";
     private String bucketName = "gepardec-bucket";
     private String scopeName = "gepardec-scope";
 
