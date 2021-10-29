@@ -1,6 +1,7 @@
 package application.service;
 
 import application.entities.Category;
+import application.helper.CategorySearchModel;
 
 import javax.ejb.Local;
 import java.util.List;
@@ -11,4 +12,5 @@ public interface CouchbaseCategoryService {
     Category read(long id);
     List<Category> getAllCategories();
     void remove(long id);
+    List<Category> search(CategorySearchModel searchModel);
 }

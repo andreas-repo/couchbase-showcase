@@ -2,6 +2,7 @@ package application.service.impl;
 
 import application.dao.CouchbaseCategoryDAO;
 import application.entities.Category;
+import application.helper.CategorySearchModel;
 import application.service.CouchbaseCategoryService;
 
 import javax.ejb.Stateless;
@@ -32,5 +33,10 @@ public class CouchbaseCategoryServiceImpl implements CouchbaseCategoryService {
     @Override
     public void remove(long id) {
         this.couchbaseCategoryDAO.remove(id);
+    }
+
+    @Override
+    public List<Category> search(CategorySearchModel searchModel) {
+        return this.couchbaseCategoryDAO.search(searchModel);
     }
 }

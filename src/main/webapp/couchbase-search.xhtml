@@ -13,17 +13,30 @@
             <h:form>
                 <div id="text-search-input">
                     <p:outputLabel styleClass="label" value="Freitextsuche:"/>
-                    <p:inputText id="text-input" value="#{couchbaseSearchController.textInput}" placeholder="Text für Suche eingeben"/>
+                    <p:inputText id="text-input" value="#{couchbaseSearchController.searchModel.inputString}" placeholder="Text für Suche eingeben"/>
                 </div>
                 <div id="id-search-input">
                     <p:outputLabel styleClass="label" value="ID Suche:"/>
-                    <p:inputText id="id-input" value="#{couchbaseSearchController.idInput}" placeholder="ID für Suche eingeben"/>
+                    <p:inputText id="id-input" value="#{couchbaseSearchController.searchModel.id}" placeholder="ID für Suche eingeben"/>
+                </div>
+                <div id="submitSearchElement">
+                    <h:commandButton id="submitSearch" value="Submit" styleClass="button" action="#{couchbaseSearchController.startSearch()}"/>
                 </div>
             </h:form>
         </div>
         <div id="search-datatable">
             <h:form>
+                <p:dataTable id="searchTable" value="#{couchbaseSearchController.list}" var="data" emptyMessage="No entries!">
+                    <p:column>
+                        <f:facet name="header">Name</f:facet>
+                        <h:outputText value="#{data.name}"/>
+                    </p:column>
 
+                    <p:column>
+                        <f:facet name="header">Details</f:facet>
+                        <h:outputText value="#{data.details}"/>
+                    </p:column>
+                </p:dataTable>
             </h:form>
         </div>
     </ui:define>
