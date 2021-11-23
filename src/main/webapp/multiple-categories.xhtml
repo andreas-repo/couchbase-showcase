@@ -1,0 +1,36 @@
+<ui:composition template="/WEB-INF/templates/layout/main-page.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:p="http://primefaces.org/ui">
+
+    <ui:param name="title" value="Couchbase Showcase"/>
+    <ui:param name="heading" value="Welcome to Couchbase Showcase - Multiple Categories in one Document" />
+
+    <ui:define name="content">
+        <h:form>
+            <div class="content">
+
+                <div id="input">
+                    <h:outputLabel id="nameLabel" styleClass="label" value="Name:"/>
+                    <h:inputText id="nameInput" label="Name" value="#{multipleCategoriesController.category.name}"/>
+                    <h:message for="nameInput"/>
+                    <br/>
+                    <h:outputLabel id="detailsLabel" styleClass="label" value="Details:"/>
+                    <h:inputText id="detailsInput" label="Details" value="#{multipleCategoriesController.category.details}"/>
+                    <h:message for="detailsInput"/>
+
+                    <div id="addControl">
+                        <h:commandButton id="submitButton" value="Submit" action="#{multipleCategoriesController.addCategoryToList()}">
+                            <f:ajax execute="@form" render="@form"/>
+                        </h:commandButton>
+                    </div>
+                </div>
+                <br/>
+            </div>
+            <br/>
+
+        </h:form>
+    </ui:define>
+</ui:composition>
