@@ -39,4 +39,9 @@ public class CouchbaseCategoryServiceImpl implements CouchbaseCategoryService {
     public List<Category> search(CategorySearchModel searchModel) {
         return this.couchbaseCategoryDAO.search(searchModel);
     }
+
+    @Override
+    public void pushList(long id, List<Category> list) {
+        this.couchbaseCategoryDAO.pushList(id, list);
+    }
 }

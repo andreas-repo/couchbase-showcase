@@ -13,4 +13,6 @@ public interface CouchbaseCategoryDAO {
     List<Category> getAllCategories();
     void remove(long id);
     List<Category> search(CategorySearchModel searchModel);
+    void update(Category category);
+    void pushList(long id, List<Category> list);
 }

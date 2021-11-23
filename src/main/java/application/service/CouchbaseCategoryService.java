@@ -13,4 +13,5 @@ public interface CouchbaseCategoryService {
     List<Category> getAllCategories();
     void remove(long id);
     List<Category> search(CategorySearchModel searchModel);
+    void pushList(long id, List<Category> list);
 }

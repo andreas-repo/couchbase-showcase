@@ -30,7 +30,33 @@
                 <br/>
             </div>
             <br/>
+            <div>
+                <h:form id="dataTableForm">
+                    <p:dataTable id="dataTable" value="#{multipleCategoriesController.tempList}" var="data" emptyMessage="No categories created">
 
+                        <p:column>
+                            <f:facet name="header">Name:</f:facet>
+                            <h:outputText value="#{data.name}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Details:</f:facet>
+                            <h:outputText value="#{data.details}"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </h:form>
+            </div>
+            <div>
+                <div>
+                    <h:outputLabel id="idLabel" styleClass="label" value="ID:"/>
+                    <h:inputText id="idInput" label="id" value="#{multipleCategoriesController.id}"/>
+                    <h:message for="idInput"/>
+                </div>
+                <h:commandButton id="pushButton" value="Push" action="#{multipleCategoriesController.push()}">
+                    <f:ajax execute="@form" render="@form"/>
+                </h:commandButton>
+            </div>
         </h:form>
     </ui:define>
 </ui:composition>
